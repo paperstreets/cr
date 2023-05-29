@@ -1,0 +1,17 @@
+<app-myform (cityAdd)="addCity($event)"></app-myform>
+<ion-card *ngFor="let catalog of catalogs; let i=index">
+  <ion-card-header>
+     <ion-card-title>{{catalog.name}}</ion-card-title>
+     <ion-card-subtitle>{{catalog.pib}} - {{catalog.area}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+     {{catalog.population}}
+     <h2>Список районів</h2>
+     <ion-item *ngFor="let r of catalog.region">
+        {{r}}
+     </ion-item>
+  </ion-card-content>
+  <ion-button (click)="update()">Редагувати</ion-button>
+  <app-updateform [catalog]="catalog" [show]="show_update" *ngIf="show_update" (showChange)="showUp($event)" 
+  (cityChange)="update_save($event,i)"></app-updateform>
+</ion-card>

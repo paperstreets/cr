@@ -1,0 +1,21 @@
+<ion-card>
+  <ion-card-header>
+     <ion-card-title>
+        <ion-label position="floating">Назві: </ion-label>
+        <ion-input [value]="catalog.name" #Inputname></ion-input>
+     </ion-card-title>
+     <ion-card-subtitle>
+        <ion-label position="floating">Піб: </ion-label>
+        <ion-input [value]="catalog.pib" #Inputpib></ion-input>
+     </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+     <ion-label position="floating">Площа: </ion-label>
+     <ion-input [value]="catalog.area" #Inputarea></ion-input>
+
+     <ion-label position="floating">Кількість населення: </ion-label>
+     <ion-input [value]="catalog.population" #Inputpop></ion-input>
+
+  </ion-card-content>
+  <ion-button (click)="save(Inputname.value, Inputpib.value, Inputarea.value, Inputpop.value)">Зберігти</ion-button>
+</ion-card>
